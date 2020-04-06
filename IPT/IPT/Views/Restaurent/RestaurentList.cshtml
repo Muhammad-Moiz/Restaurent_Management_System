@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "RestaurentList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Restaurent List</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                            <thead>
+
+                                <tr role="row">
+                                    <th rowspan="1" colspan="1">ID</th>
+                                    <th rowspan="1" colspan="1">Name</th>
+                                    <th rowspan="1" colspan="1">Phone Number</th>
+                                    <th rowspan="1" colspan="1">Address</th>
+                                    <th rowspan="1" colspan="1">Country </th>
+                                    <th rowspan="1" colspan="1">Manager</th>
+                                    <th rowspan="1" colspan="1">Branches</th>
+                                </tr>
+
+
+                            </thead>
+                            <tfoot>
+                                <tr role="row">
+                                    <th rowspan="1" colspan="1">ID</th>
+                                    <th rowspan="1" colspan="1">Name</th>
+                                    <th rowspan="1" colspan="1">Phone Number</th>
+                                    <th rowspan="1" colspan="1">Address</th>
+                                    <th rowspan="1" colspan="1">Country </th>
+                                    <th rowspan="1" colspan="1">Manager</th>
+                                    <th rowspan="1" colspan="1">Branches</th>
+                                </tr>
+
+                            </tfoot>
+                            <tbody>
+                                @foreach (var aa in Model)
+                                {
+                                <tr role="row" class="odd">
+                                    <td>@aa.Id</td>
+                                    <td>@aa.Name </td>
+                                    <td>@aa.Phone</td>
+                                    <td>@aa.Address</td>
+                                    <td>@aa.Country</td>
+                                    <td>@aa.Manager</td>
+                                    <td>
+                                        <a href='@Url.Action( "BranchList1","Restaurent" , new { id = aa.Id })'  class="btn btn-info btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <span class="text">Branches</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
