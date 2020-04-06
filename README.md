@@ -1,6 +1,6 @@
 # Restaurent_Management_System
 
-Restaurant Management System
+Subject: Information Processing Technique
 
 Technology:Asp .net MVC, Bootstrap, SQL 2016
 
